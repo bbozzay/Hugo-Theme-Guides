@@ -1,4 +1,5 @@
-# Working with CSS Site and Page Resources
+# CSS/SCSS Resources
+As of Hugo version 0.43, we can use Hugo's asset pipelines to process CSS. This means we can use SASS/SCSS, combine files into one stylesheet, cachebust our stylesheets automatically, and minify CSS without installing any additional build tools. This means we really only have to run `hugo` or `hugo server` to process these resources.
 
 {{ $s := resources.Get "scss/style.scss" | toCSS | postCSS | minify }}
 
