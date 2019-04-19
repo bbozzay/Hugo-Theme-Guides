@@ -21,3 +21,12 @@ git
 // 3. Reference the new resource with .Permalink, then use integrety to add cachebusting.
 <script type="text/javascript" src="{{ $dashboard.Permalink }}" integrity="{{ $dashboard.Data.Integrity }}"></script>
 ```
+
+## Combine Files
+
+```
+{{ $vendor := resources.Get "js/vendor/jquery.min.js" }}
+{{ $customjs := resources.Get "js/main.js" }}
+
+{{ $scripts := slice $vendor $customjs | resources.Concat "app.js" | minify | fingerprint }}
+```
