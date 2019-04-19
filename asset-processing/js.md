@@ -4,7 +4,7 @@ Embed a partial in an asset:
 
 ```
 // assets/js/app.js
-
+git
 {{ partial "dashboard.js" | safeJS }}
 ```
 
